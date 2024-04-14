@@ -4,5 +4,9 @@ export const routes: Routes = [
     {
         path: '',
         loadComponent: () => import('./pages/index/index.component').then(m => m.IndexComponent)
+    },
+    {
+        path: 'make-itinerary',
+        loadComponent: () => import('./pages/make-itinerary/make-itinerary.component').then(m => m.MakeItineraryComponent)
     }
 ];
