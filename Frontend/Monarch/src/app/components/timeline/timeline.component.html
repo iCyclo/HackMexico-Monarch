@@ -1,9 +1,6 @@
 <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
   <ng-template pTemplate="marker" let-event>
-    <span
-      class="custom-marker shadow-2 icon-container"
-      [style.backgroundColor]="event.color"
-    >
+    <span class="custom-marker shadow-2 icon-container blue-container">
       <i [ngClass]="event.icon"></i>
     </span>
   </ng-template>
