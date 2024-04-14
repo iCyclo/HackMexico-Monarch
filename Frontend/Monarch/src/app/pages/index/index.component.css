@@ -1,0 +1,40 @@
+.banner{
+    max-width: 100vw;
+    height: 70vh;
+    background-image: url('../../../assets/images/capital.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.section-img:last-child{
+    margin-bottom: 5rem;
+}
+
+.banner-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(251, 94, 32, 0.4);
+}
+
+.mat-mdc-raised-button:not(:disabled){
+    color: #FB5F20;
+    text-transform: uppercase;
+}
+
+.banner-button{
+    height: 4.8rem;
+}
+
+.states, .curiosities{
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.section-img{
+    max-width: 50rem;
+    border-radius: 1rem;
+}

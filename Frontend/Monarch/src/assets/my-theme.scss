@@ -1,0 +1,112 @@
+
+@use '@angular/material' as mat;
+
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define your theme with color palettes, typography and density
+
+$mat-theme-primary-palette: map-merge(mat.$deep-orange-palette, ( 501: #fb5f20,contrast: (A200: rgba(0,0,0, 0.87),)));
+$mat-theme-primary: mat.define-palette(
+  $mat-theme-primary-palette,
+  $default: 501,
+  $lighter: A200,
+  $darker: 700,
+  $text: 500
+);
+
+$mat-theme-accent-palette: map-merge(mat.$teal-palette, ( 501: #20bcfb,201: #8edcfc,701: #00b5ff,601: #00b4ff,));
+$mat-theme-accent: mat.define-palette(
+  $mat-theme-accent-palette,
+  $default: 501,
+  $lighter: 201,
+  $darker: 701,
+  $text: 601
+);
+
+$mat-theme-warn-palette: map-merge(mat.$deep-orange-palette, ( 501: #ff0d00,201: #ff7c53,701: #f13a00,));
+$mat-theme-warn: mat.define-palette(
+  $mat-theme-warn-palette,
+  $default: 501,
+  $lighter: 201,
+  $darker: 701,
+  $text: A700
+);
+
+$mat-dark-theme-primary-palette: map-merge(mat.$deep-orange-palette, ( 501: #fb5f20,201: #fc8819,701: #fc8819,601: #fc8819,contrast: (501: #ffffff,201: #ffffff,)));
+$mat-dark-theme-primary: mat.define-palette(
+  $mat-dark-theme-primary-palette,
+  $default: 501,
+  $lighter: 201,
+  $darker: 701,
+  $text: 601
+);
+
+$mat-dark-theme-accent-palette: map-merge(mat.$green-palette, ( 501: #20bcfb,201: #8edcfc,701: #8edcfc,601: #8edcfc,));
+$mat-dark-theme-accent: mat.define-palette(
+  $mat-dark-theme-accent-palette,
+  $default: 501,
+  $lighter: 201,
+  $darker: 701,
+  $text: 601
+);
+
+$mat-dark-theme-warn-palette: map-merge(#ff9e80, ( 501: #ff0d00,contrast: (501: black,100: white,)));
+$mat-dark-theme-warn: mat.define-palette(
+  $mat-dark-theme-warn-palette,
+  $default: 501,
+  $lighter: 100,
+  $darker: A700,
+  $text: 100
+);
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$mat-typography: mat.define-typography-config(
+  $font-family: 'Rubik',
+  $display-4:     mat.define-typography-level($font-size: 96px, $font-weight: 300, $font-family: Rubik),
+  $display-3:     mat.define-typography-level($font-size: 60px, $font-weight: 500, $font-family: Rubik),
+  $display-2:     mat.define-typography-level($font-size: 48px, $font-weight: 500, $font-family: Rubik),
+  $display-1:     mat.define-typography-level($font-size: 34px, $font-weight: 500, $font-family: Rubik),
+  $headline:      mat.define-typography-level($font-size: 24px, $font-weight: 500, $font-family: Rubik),
+  $title:         mat.define-typography-level($font-size: 20px, $font-weight: 500, $font-family: Rubik),
+  $subheading-2:  mat.define-typography-level($font-size: 18px, $font-weight: 500, $font-family: Rubik),
+  $subheading-1:  mat.define-typography-level($font-size: 20px, $font-weight: 500, $font-family: Rubik),
+  $body-2:        mat.define-typography-level($font-size: 16px, $font-weight: 400, $font-family: Rubik),
+  $body-1:        mat.define-typography-level($font-size: 18px, $font-weight: 400, $font-family: Rubik),
+  $caption:       mat.define-typography-level($font-size: 16px, $font-weight: Medium, $font-family: Rubik),
+  $button:        mat.define-typography-level($font-size: 16px, $font-weight: 500, $font-family: Rubik),
+  // Line-height must be unit-less fraction of the font-size.
+  $input:         mat.define-typography-level($font-size: inherit, $line-height: 1.125, $font-weight: 500, $font-family: Rubik),
+);
+
+$mat-density: 0;
+// @include mat.elevation(
+//   $zValue: 12,
+//   $color: #000,
+//   $opacity: 0.5
+// );
+
+$mat-core-theme: mat.define-light-theme((
+  color: (
+    primary: $mat-theme-primary,
+    accent: $mat-theme-accent,
+    warn: $mat-theme-warn
+  ),
+  typography: $mat-typography,
+  density: $mat-density
+));
+
+$mat-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $mat-dark-theme-primary,
+    accent: $mat-dark-theme-accent,
+    warn: $mat-dark-theme-warn,
+  )
+));
+
+@include mat.all-component-themes($mat-core-theme);
+
+.dark-theme {
+  @include mat.all-component-colors($mat-dark-theme);
+}

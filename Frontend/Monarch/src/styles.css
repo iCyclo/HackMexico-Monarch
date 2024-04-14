@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+*{
+    font-size: 1.6rem;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.orange-container {
+  background-color: #fb5f20;
+}
+
+.t-orange{
+    color: #fb5f20;
+}
+
+.t-blue{
+    color: #20bcfb;
+}
+
+
+.flex{
+    display: flex;
+}
+
+.a-center{
+    align-items: center;
+}
+
+h1{
+    font-size: 4.8rem;
+}
+
+h2{
+    font-size: 3.6rem;
+}
+
+h3, .f-m{
+    font-size: 2.6rem;
+}
+
+.container{
+    width: 102.4rem;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.4rem
+}
+
+.j-between{
+    justify-content: space-between;
+}
+
+
+
+
+
