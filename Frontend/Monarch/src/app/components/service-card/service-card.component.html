@@ -1,5 +1,5 @@
 <div class="card-wrapper mat-elevation-z4 flex column">
-  <h3>{{data.name}}</h3>
+  <h3>{{ data.name }}</h3>
   <img src="assets/images/capital.avif" alt="" />
   <div class="flex a-center icons j-between">
     @for (disability of data.disabilities; track $index) {
@@ -11,6 +11,7 @@
   <p class="description">{{ data.description }}</p>
   @if (showPrice) {
   <div class="price-container flex">
+    <span>90min</span>
     <span class="price">$ {{ data.price }}</span>
   </div>
   }
