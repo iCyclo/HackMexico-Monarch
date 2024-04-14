@@ -4,3 +4,16 @@
 h1{
     text-align: center;
 }
+
+mat-form-field{
+    width: 22.5rem;
+}
+
+.selects{
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.selects mat-form-field{
+    width: 30rem;
+}

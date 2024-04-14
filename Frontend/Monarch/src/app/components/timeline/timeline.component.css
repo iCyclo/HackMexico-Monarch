@@ -1,3 +1,12 @@
+.wrapper{
+
+    height: calc(100vh - 25rem);
+    overflow-y: auto;
+}
+h1{
+    text-align: center;
+}
+
 .icon-container {
     width: 4rem;
     height: 4rem;
@@ -23,6 +32,13 @@ h6,h5,h3 {
     
 }
 
-.side {
+.timeline-wrapper{
+    width: 50rem;
+    height: 100%;
+    padding: 2rem;
+}
 
+.event-detail{
+    padding: 2rem;
+    gap: 2rem;
 }

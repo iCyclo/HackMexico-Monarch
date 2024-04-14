@@ -7,6 +7,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { ItineraryEvent } from "../../types/itinerary-event.type";
 import { ServiceCardComponent } from "../service-card/service-card.component";
 import { ReviewComponent } from "../review/review.component";
+import { MatIconModule } from "@angular/material/icon";
 
 interface EventItem {
   status?: string;
@@ -26,6 +27,7 @@ interface EventItem {
     CardModule,
     CommonModule,
     MatButtonModule,
+    MatIconModule,
     ServiceCardComponent,
     ReviewComponent,
   ],
@@ -60,11 +62,16 @@ export class TimelineComponent implements OnInit {
     this.current_event = {
       id: 1,
       name: event.name,
+      imgPath: "",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus perspiciatis impedit exercitationem, accusantium",
-      disabilities: ["accessible"],
+      disabilities: [],
       price: event.price,
-      reviews: [{ comment: "Un lugar poco accesible.", stars: 2 }],
+      reviews: [
+        { comment: "Un lugar poco accesible.", stars: 2 },
+        { comment: "Un lugar muy culero.", stars: 1 },
+      
+      ],
     };
   }
 }

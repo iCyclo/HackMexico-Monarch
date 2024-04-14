@@ -1,12 +1,24 @@
 .review-wrapper{
     max-width: 30rem;
-    min-height: 20rem;
+    max-height: 20rem;
+    padding: 2rem;
     border: 1px solid gray;
     border-radius: 1rem;
+    gap: 1rem;
 }
 
 img{
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
+}
+
+.icon-wrapper{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
 }

@@ -1,27 +1,42 @@
-<p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
-  <ng-template pTemplate="marker" let-event>
-    <span
-      class="custom-marker shadow-2 icon-container blue-container"
-      (click)="showDetails(event)"
+<div class="wrapper flex j-center" >
+  <div class="timeline-wrapper flex column j-between">
+    <p-timeline
+      [value]="events"
+      align="alternate"
+      styleClass="customized-timeline"
     >
-      <i class="pi pi-check"></i>
-    </span>
-  </ng-template>
-  <ng-template pTemplate="content" let-event>
-    <h3>{{ event.name }}</h3>
-    <h5>{{ event.date | date : "dd/MM/yyyy hh:mm" }}</h5>
-    <h6 class="t-green">${{ event.price }}</h6>
-  </ng-template>
-</p-timeline>
-<div class="flex column a-center margin-top">
-  <button mat-raised-button color="primary">
-    You will pay: ${{ current_price }}
-  </button>
-</div>
+      <ng-template pTemplate="marker" let-event>
+        <span
+          class="custom-marker shadow-2 icon-container blue-container"
+          (click)="showDetails(event)"
+        >
+          <i class="pi pi-check"></i>
+        </span>
+      </ng-template>
+      <ng-template pTemplate="content" let-event>
+        <h3>{{ event.name }}</h3>
+        <h5>{{ event.date | date : "dd/MM/yyyy hh:mm" }}</h5>
+        <h6 class="t-green">${{ event.price }}</h6>
+      </ng-template>
+    </p-timeline>
+    <div class="flex j-between">
+      <button mat-raised-button color="basic">
+        You will pay: ${{ current_price }}
+      </button>
 
-@if(current_event) {
-<div>
-  <app-service-card [data]="current_event" [showPrice]="true" />
-  <app-review [reviews]="current_event.reviews" />
+      <button mat-raised-button color="primary">
+        Add more
+      </button>
+
+    </div>
+  </div>
+
+  @if(current_event) {
+  <div class="event-detail flex column">
+    <app-service-card [data]="current_event" [showPrice]="true" />
+    @for (review of current_event.reviews; track $index) {
+      <app-review [review]="review" />
+    }
+  </div>
+  }
 </div>
-}

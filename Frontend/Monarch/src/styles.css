@@ -80,6 +80,10 @@ a{
     justify-content: flex-end;
 }
 
+.j-evenly{
+    justify-content: space-evenly;
+}
+
 .j-center{
     justify-content: center;
 }

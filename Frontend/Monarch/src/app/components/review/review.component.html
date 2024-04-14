@@ -1,9 +1,11 @@
 <div class="review-wrapper flex a-center">
-  <img src="assets/images/avatar.png" alt="avatar" />
+  <span class="icon-wrapper">
+    <mat-icon style="color: #fff;">person</mat-icon>
+  </span>
   <div>
-    @for (review of reviews; track $index) {
-    <p-rating [(ngModel)]="review.stars" [contentEditable]="false"></p-rating>
-    <p class="review-text">{{ review.comment }}</p>
-    }
+    
+    <p-rating [(ngModel)]="review.stars"  readonly="true" cancel="false"></p-rating>
+    <p class="review-text">{{ review.comment }}</p> 
+  
   </div>
 </div>
