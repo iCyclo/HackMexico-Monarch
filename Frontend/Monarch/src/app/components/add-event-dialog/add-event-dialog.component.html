@@ -1,3 +1,16 @@
-<p>
-  add-event-dialog works!
-</p>
+<div class="wrapper">
+  <h2>Add Event</h2>
+
+
+  <mat-form-field appearance="outline">
+    <input matInput type="datetime-local" placeholder="Time">
+  </mat-form-field>
+
+
+  <div class="cards">
+    @for (service of services; track $index) {
+      <app-service-card [data]="service" [showPrice]="true" (click)="add(service)"/>
+    }
+  </div>
+
+</div>  

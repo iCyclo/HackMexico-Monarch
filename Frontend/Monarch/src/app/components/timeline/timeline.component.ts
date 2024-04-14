@@ -8,6 +8,8 @@ import { ItineraryEvent } from "../../types/itinerary-event.type";
 import { ServiceCardComponent } from "../service-card/service-card.component";
 import { ReviewComponent } from "../review/review.component";
 import { MatIconModule } from "@angular/material/icon";
+import { MatDialog, MatDialogModule } from "@angular/material/dialog";
+import { AddEventDialogComponent } from "../add-event-dialog/add-event-dialog.component";
 
 interface EventItem {
   status?: string;
@@ -30,6 +32,7 @@ interface EventItem {
     MatIconModule,
     ServiceCardComponent,
     ReviewComponent,
+    MatDialogModule,
   ],
 })
 export class TimelineComponent implements OnInit {
@@ -37,7 +40,7 @@ export class TimelineComponent implements OnInit {
 
   current_event?: ItineraryEvent | undefined;
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     this.events = [
       {
         date: new Date(),
@@ -70,8 +73,14 @@ export class TimelineComponent implements OnInit {
       reviews: [
         { comment: "Un lugar poco accesible.", stars: 2 },
         { comment: "Un lugar muy culero.", stars: 1 },
-      
       ],
     };
+  }
+
+  openDialog() {
+    this.dialog.open(AddEventDialogComponent, {
+      width: '80vw',
+      height: '80vh'
+    }).afterClosed().pipe().subscribe();
   }
 }
