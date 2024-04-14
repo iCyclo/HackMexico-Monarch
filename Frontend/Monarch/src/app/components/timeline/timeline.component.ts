@@ -78,9 +78,25 @@ export class TimelineComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(AddEventDialogComponent, {
-      width: '80vw',
-      height: '80vh'
-    }).afterClosed().pipe().subscribe();
+    this.dialog
+      .open(AddEventDialogComponent, {
+        width: "80vw",
+        height: "80vh",
+      })
+      .afterClosed()
+      .pipe()
+      .subscribe((added?: ItineraryEvent[]) => {
+        if (!added) return;
+        this.events = [
+          ...this.events,
+          ...added.map((event) => {
+            return {
+              date: new Date(),
+              name: event.name,
+              price: event.price,
+            };
+          }),
+        ];
+      });
   }
 }
