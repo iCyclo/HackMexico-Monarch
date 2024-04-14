@@ -1,7 +1,9 @@
 <div class="review-wrapper flex a-center">
   <img src="assets/images/avatar.png" alt="avatar" />
   <div>
-    <p-rating [(ngModel)]="value" [contentEditable]="false"></p-rating>
-    <p class="review-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius voluptatem reprehenderit quae minima animi aspernatur recusandae delectus itaque illo qui, sint impedit a ex id ipsa, cumque minus, in atque?</p>
+    @for (review of reviews; track $index) {
+    <p-rating [(ngModel)]="review.stars" [contentEditable]="false"></p-rating>
+    <p class="review-text">{{ review.comment }}</p>
+    }
   </div>
 </div>

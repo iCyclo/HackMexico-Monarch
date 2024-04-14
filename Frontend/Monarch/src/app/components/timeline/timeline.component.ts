@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { TimelineModule } from 'primeng/timeline';
-import { CardModule } from 'primeng/card';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from "@angular/core";
+import { TimelineModule } from "primeng/timeline";
+import { CardModule } from "primeng/card";
+import { CommonModule } from "@angular/common";
+import { Itinerary } from "../../types/itinerary.type";
+import { MatButtonModule } from "@angular/material/button";
+import { ItineraryEvent } from "../../types/itinerary-event.type";
+import { ServiceCardComponent } from "../service-card/service-card.component";
+import { ReviewComponent } from "../review/review.component";
 
 interface EventItem {
   status?: string;
@@ -12,44 +17,54 @@ interface EventItem {
 }
 
 @Component({
-  selector: 'app-timeline',
-  templateUrl: './timeline.component.html',
-  styleUrls: ['./timeline.component.css'],
+  selector: "app-timeline",
+  templateUrl: "./timeline.component.html",
+  styleUrls: ["./timeline.component.css"],
   standalone: true,
-  imports: [TimelineModule, CardModule, CommonModule],
+  imports: [
+    TimelineModule,
+    CardModule,
+    CommonModule,
+    MatButtonModule,
+    ServiceCardComponent,
+    ReviewComponent,
+  ],
 })
 export class TimelineComponent implements OnInit {
-  events: EventItem[] = [];
+  events: Itinerary[] = [];
+
+  current_event?: ItineraryEvent | undefined;
 
   constructor() {
     this.events = [
       {
-        status: 'Ordered',
-        date: '15/10/2020 10:30',
-        icon: 'pi pi-shopping-cart',
-        color: '#9C27B0',
-        image: 'game-controller.jpg',
+        date: new Date(),
+        name: "Museum X",
+        price: 50,
       },
       {
-        status: 'Processing',
-        date: '15/10/2020 14:00',
-        icon: 'pi pi-cog',
-        color: '#673AB7',
-      },
-      {
-        status: 'Shipped',
-        date: '15/10/2020 16:15',
-        icon: 'pi pi-shopping-cart',
-        color: '#FF9800',
-      },
-      {
-        status: 'Delivered',
-        date: '16/10/2020 10:00',
-        icon: 'pi pi-check',
-        color: '#607D8B',
+        date: new Date(),
+        name: "Museum Y",
+        price: 20,
       },
     ];
   }
 
   ngOnInit(): void {}
+
+  get current_price(): number {
+    return this.events.reduce((prev, current) => prev + current.price, 0);
+  }
+
+  showDetails(event: Itinerary): void {
+    this.current_event = {
+      id: 1,
+      name: event.name,
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus perspiciatis impedit exercitationem, accusantium",
+      disabilities: ["accessible"],
+      price: event.price,
+      reviews: [{ comment: "Un lugar poco accesible.", stars: 2 }],
+    };
+  }
 }

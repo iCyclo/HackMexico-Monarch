@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
+import { ItineraryEvent } from "../../types/itinerary-event.type";
 
 @Component({
   selector: "app-service-card",
@@ -9,6 +10,10 @@ import { MatIconModule } from "@angular/material/icon";
   standalone: true,
 })
 export class ServiceCardComponent implements OnInit {
+  @Input() data!: Omit<ItineraryEvent, "reviews">;
+
+  @Input() showPrice!: boolean;
+
   constructor() {}
 
   ngOnInit() {}
