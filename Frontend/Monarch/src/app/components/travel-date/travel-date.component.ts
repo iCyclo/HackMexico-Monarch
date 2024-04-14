@@ -1,10 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { MatDatepickerModule } from "@angular/material/datepicker";
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { DateRange, MatDatepickerModule } from "@angular/material/datepicker";
+import {MatCardModule} from '@angular/material/card';
 
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { CommonModule, JsonPipe } from "@angular/common";
-import { MatNativeDateModule } from "@angular/material/core";
+import { provideNativeDateAdapter } from "@angular/material/core";
 
 
 
@@ -14,21 +12,35 @@ import { MatNativeDateModule } from "@angular/material/core";
   styleUrls: ["./travel-date.component.css"],
   standalone: true,
   imports: [
-    MatFormFieldModule,
+    MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule,
-    FormsModule,
-    ReactiveFormsModule,
-    JsonPipe,
-
-    CommonModule
   ],
   providers: [
-    MatDatepickerModule
+    provideNativeDateAdapter()
   ]
 })
 export class TravelDateComponent implements OnInit {
   constructor() {}
+
+  @Input() selectedRangeValue: DateRange<Date> | undefined;
+  @Output() selectedRangeValueChange = new EventEmitter<DateRange<Date>>();
+
+  selectedChange(m: any) {
+      if (!this.selectedRangeValue?.start || this.selectedRangeValue?.end) {
+          this.selectedRangeValue = new DateRange<Date>(m, null);
+      } else {
+          const start = this.selectedRangeValue.start;
+          const end = m;
+          if (end < start) {
+              this.selectedRangeValue = new DateRange<Date>(end, start);
+          } else {
+              this.selectedRangeValue = new DateRange<Date>(start, end);
+          }
+      }
+      this.selectedRangeValueChange.emit(this.selectedRangeValue);
+  }
+
+
 
   ngOnInit() {}
 }

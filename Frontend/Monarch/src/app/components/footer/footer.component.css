@@ -2,3 +2,12 @@ footer{
     max-width: 100vw;
     height: 10rem;
 }
+p{
+    color: #Fff;
+}
+.container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

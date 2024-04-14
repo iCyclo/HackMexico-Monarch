@@ -1,0 +1,10 @@
+.wrapper{
+    height: calc(100vh - 28rem);
+}
+h1{
+    text-align: center;
+}
+
+.calendar{
+    width: 300px;
+  }

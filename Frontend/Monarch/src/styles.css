@@ -73,6 +73,17 @@ a{
     flex-direction: column;
 }
 
+.j-end{
+    justify-content: flex-end;
+}
+
+.j-center{
+    justify-content: center;
+}
+
+.p-stepper .p-stepper-nav{
+    overflow: hidden;
+}
 
 
 
