@@ -41,30 +41,6 @@
       ></ng-template>
     </p-stepperPanel>
 
-    <p-stepperPanel header="Timeline">
-      <ng-template
-        pTemplate="content"
-        let-prevCallback="prevCallback"
-        let-nextCallback="nextCallback"
-        let-index="index"
-      >
-        <app-timeline />
-
-        <div class="flex j-between">
-          <p-button
-            label="Back"
-            icon="pi pi-arrow-left"
-            (onClick)="prevCallback.emit()"
-          />
-          <p-button
-            label="Next"
-            icon="pi pi-arrow-right"
-            iconPos="right"
-            (onClick)="nextCallback.emit()"
-          />
-          </div
-      ></ng-template>
-    </p-stepperPanel>
 
     <p-stepperPanel header="Date">
       <ng-template
@@ -95,16 +71,44 @@
       <ng-template
         pTemplate="content"
         let-prevCallback="prevCallback"
+        let-nextCallback="nextCallback"
         let-index="index"
       >
         <app-arrive-place />
 
-        <div class="flex">
+        <div class="flex j-between">
           <p-button
             label="Back"
             icon="pi pi-arrow-left"
             (onClick)="prevCallback.emit()"
-          /></div
+          />
+          <p-button
+            label="Next"
+            icon="pi pi-arrow-right"
+            iconPos="right"
+            (onClick)="nextCallback.emit()"
+          />
+          </div
+      ></ng-template>
+    </p-stepperPanel>
+
+
+    
+    <p-stepperPanel header="Timeline">
+      <ng-template
+        pTemplate="content"
+        let-prevCallback="prevCallback"
+        let-index="index"
+      >
+        <app-timeline />
+
+        <div class="flex j-between">
+          <p-button
+            label="Back"
+            icon="pi pi-arrow-left"
+            (onClick)="prevCallback.emit()"
+          />
+          </div
       ></ng-template>
     </p-stepperPanel>
   </p-stepper>
