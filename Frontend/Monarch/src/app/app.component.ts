@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { MatFormField, MatInputModule } from '@angular/material/input';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,9 @@ import { FooterComponent } from './components/footer/footer.component';
 
     NavBarComponent,
     FooterComponent
+  ],
+  providers: [
+    provideAnimations()
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
