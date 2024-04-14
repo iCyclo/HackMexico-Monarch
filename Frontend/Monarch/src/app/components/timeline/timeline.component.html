@@ -1,28 +1,27 @@
 <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
   <ng-template pTemplate="marker" let-event>
-    <span class="custom-marker shadow-2 icon-container blue-container">
-      <i [ngClass]="event.icon"></i>
+    <span
+      class="custom-marker shadow-2 icon-container blue-container"
+      (click)="showDetails(event)"
+    >
+      <i class="pi pi-check"></i>
     </span>
   </ng-template>
   <ng-template pTemplate="content" let-event>
-    <p-card [header]="event.status" [subheader]="event.date">
-      <img
-        *ngIf="event.image"
-        [src]="
-          'https://primefaces.org/cdn/primeng/images/demo/product/' +
-          event.image
-        "
-        [alt]="event.name"
-        width="200"
-        class="shadow-2"
-      />
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-        consequuntur error repudiandae numquam deserunt quisquam repellat libero
-        asperiores earum nam nobis, culpa ratione quam perferendis esse,
-        cupiditate neque quas!
-      </p>
-      <button pButton label="Read more" class="p-button-text"></button>
-    </p-card>
+    <h3>{{ event.name }}</h3>
+    <h5>{{ event.date | date : "dd/MM/yyyy hh:mm" }}</h5>
+    <h6 class="t-green">${{ event.price }}</h6>
   </ng-template>
 </p-timeline>
+<div class="flex column a-center margin-top">
+  <button mat-raised-button color="primary">
+    You will pay: ${{ current_price }}
+  </button>
+</div>
+
+@if(current_event) {
+<div>
+  <app-service-card [data]="current_event" [showPrice]="true" />
+  <app-review [reviews]="current_event.reviews" />
+</div>
+}
