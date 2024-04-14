@@ -5,7 +5,7 @@
       <mat-label>Country</mat-label>
       <mat-select>
         @for (country of countries; track $index) {
-        <mat-option>
+        <mat-option [value]="country.name">
           <div class="flex j-between a-center" style="width: 100%">
             <img [src]="country.flag" width="20px" height="20px" />
             <p>{{ country.name }}</p>

@@ -72,7 +72,10 @@ export class TimelineComponent implements OnInit {
       price: event.price,
       reviews: [
         { comment: "Un lugar poco accesible.", stars: 2 },
-        { comment: "Un lugar muy culero.", stars: 1 },
+        {
+          comment: "Un lugar que no cumple la accesibilidad que promete",
+          stars: 1,
+        },
       ],
     };
   }

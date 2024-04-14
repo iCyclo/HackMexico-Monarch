@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -14,6 +15,7 @@ import { MatSelectModule } from "@angular/material/select";
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
+    CommonModule,
   ],
 })
 export class ManyPersonComponent implements OnInit {
@@ -22,7 +24,9 @@ export class ManyPersonComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    this.desabilityPersons.valueChanges.subscribe();
+  ngOnInit() {}
+
+  getPersons(): number[] {
+    return Array(this.desabilityPersons.value).map((_, index) => index + 1);
   }
 }
