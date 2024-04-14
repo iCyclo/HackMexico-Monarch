@@ -8,6 +8,7 @@ body {
 
 *{
     font-size: 1.6rem;
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -17,6 +18,10 @@ body {
 
 .orange-container {
   background-color: #fb5f20;
+}
+
+.blue-container{
+    background-color: #20bcfb;
 }
 
 .t-orange{
@@ -62,6 +67,11 @@ a{
 .j-between{
     justify-content: space-between;
 }
+
+.column{
+    flex-direction: column;
+}
+
 
 
 
