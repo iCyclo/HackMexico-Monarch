@@ -1,9 +1,18 @@
 <div class="wrapper">
   <h1>Select your country</h1>
-  <mat-form-field appearance="outline">
-    <mat-label>Country</mat-label>
-    <mat-select>
-      
-    </mat-select>
-  </mat-form-field>
+  <div class="flex column a-center">
+    <mat-form-field appearance="outline">
+      <mat-label>Country</mat-label>
+      <mat-select>
+        @for (country of countries; track $index) {
+        <mat-option>
+          <div class="flex j-between a-center" style="width: 100%">
+            <img [src]="country.flag" width="20px" height="20px" />
+            <p>{{ country.name }}</p>
+          </div>
+        </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
 </div>
