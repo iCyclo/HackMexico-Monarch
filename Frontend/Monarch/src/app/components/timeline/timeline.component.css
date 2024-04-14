@@ -1,0 +1,11 @@
+.icon-container {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+align-items: center;
+justify-content: center;
+    i {
+        color: #fff;
+    }
+}
