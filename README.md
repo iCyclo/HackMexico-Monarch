@@ -20,19 +20,19 @@ Monarch isn't just an app, it's a lifeline for travelers with disabilities seeki
 
 ## Testing instructions
 
-Step 1: Click in "Make itinerary"
-Step 2: Choose the country what you are from
-Step 3: Click in "Next"
-Step 4: Choose how many people invited
-Step 5: If you will go with people who got a disibility, put the quantity
-Step 6: Select the type of disability the persons have
-Step 7: Press "Next"
-Step 8: Select the date when you will arrive and the dete when you will return
-Step 9: Press "Next"
-Step 10: Select the state where you will arrive
-Step 11: Press "add more" the choose the atracktions that you will visit
-Step 12: If you click the selection on the timeline, the platform it will open a little description with the reviews
-Step 13: Press "Done" and the activity will be added in the menu.
+- Step 1: Click in "Make itinerary"
+- Step 2: Choose the country what you are from
+- Step 3: Click in "Next"
+- Step 4: Choose how many people invited
+- Step 5: If you will go with people who got a disibility, put the quantity
+- Step 6: Select the type of disability the persons have
+- Step 7: Press "Next"
+- Step 8: Select the date when you will arrive and the dete when you will return
+- Step 9: Press "Next"
+- Step 10: Select the state where you will arrive
+- Step 11: Press "add more" the choose the atracktions that you will visit
+- Step 12: If you click the selection on the timeline, the platform it will open a little description with the reviews
+- Step 13: Press "Done" and the activity will be added in the menu.
 
 ## Authors
 
