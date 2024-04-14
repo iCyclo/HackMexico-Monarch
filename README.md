@@ -23,4 +23,5 @@ Monarch isn't just an app, it's a lifeline for travelers with disabilities seeki
 - [@iCyclo](https://www.github.com/iCyclo)
 - [@HuetoD](https://www.github.com/HuetoD)
 - [@lizziecienta](https://www.github.com/lizziecienta)
+- [@Gaeta819](https://www.github.com/Gaeta819)
 
